@@ -1,0 +1,75 @@
+*{
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: Inter, sans-serif;
+  height: 100vh;
+  background: #282D35;
+}
+
+/* nav */
+
+nav {
+  background-color: #21222A;
+  
+  display: flex;
+  align-items: center;
+  height: 90px;
+  padding: 30px 26px;
+}
+
+.nav--logo_text, .nav--title{
+  margin: 0;
+}
+
+.nav--logo_text{
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 22px;
+  color: #61DAFB;
+}
+
+.nav--title{
+  color: #DEEBF8;
+  font-weight: 600;
+}
+
+.nav--icon{
+  height: 30px;
+  margin-right: 8px;
+}
+
+/* main */
+
+main{
+  padding: 57px 27px;
+  color: #FFFF;
+  background-image: url(./assets/images/reactjs-bg.png);
+  background-repeat: no-repeat;
+  background-position: right 75%;
+}
+
+.main--title{
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: -0.05em;
+}
+
+.main--list{
+  margin-top: 46px;
+  max-width: 400px;
+}
+
+.main--list > li {
+  line-height: 20px;
+  padding-block: 10px;
+}
+
+.main--list > li::marker{
+  font-size: 1.4em;
+  color: #61DAFB;
+}
