@@ -1,12 +1,13 @@
 import ReactMDE from "react-mde";
-import ShowDown from "showdown";
+import * as Showdown from "showdown";
 import { useState } from "react"
 import "./Editor.css"
 
 const Editor = (props) => {
+    
     const [selectedTab, setSelectedTab] = useState("write");
 
-    const converter = new ShowDown.Converter({
+    const converter = new Showdown.Converter({
         tables: true,
         simplifiedAutoLink: true,
         strikethrough: true,
@@ -16,13 +17,13 @@ const Editor = (props) => {
   return (
     <section className="pane editor">
         <ReactMDE 
-            // value={props.currentNote.body}
-            // onChange={props.updateNote}
+            value={props.currentNote.body}
+            onChange={props.updateNote}
             selectedTab={selectedTab}
             onTabChange={setSelectedTab}
-            generateMarkdownPreview={(markdown) => {
+            generateMarkdownPreview={(markdown) =>
                 Promise.resolve(converter.makeHtml(markdown))
-            }}
+            }
             minEditorHeight={80}
             heightUnits="vh"
         />
