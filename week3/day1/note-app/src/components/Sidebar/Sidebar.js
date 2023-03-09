@@ -9,7 +9,16 @@ const Sidebar = (props) => {
       className={`note ${note.id === props.currentNote.id ? "selected-note" : ""}`}
       onClick={() => props.setCurrentNoteId(note.id)}
       >
-        <h4 className='note--text'>Note {index + 1}</h4>
+        <h4 className='note--text'>
+          {/* Note {index + 1} */}
+          {note.body.split("\n")[0] === "" ? `Note ${index + 1}` : note.body.split("\n")[0]}
+        </h4>
+        {note.id === props.currentNote.id ?
+        <button className='delete-btn' onClick={() => props.deleteNote(note.id)}>
+          Delete
+        </button>
+        :
+        "" }
       </div>
     </div>
   ))
