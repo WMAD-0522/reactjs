@@ -7,6 +7,7 @@ const Profile = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
+
   useEffect(() => {
     fetch(`https://swapi.dev/api/people/${id}`)
     .then(res => res.json())

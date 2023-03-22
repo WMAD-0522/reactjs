@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from "styled-components";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Card = styled.div`
     width: 200px;
@@ -42,7 +42,7 @@ const StarWarsCard = (props) => {
         <CardTitle >{props.name}</CardTitle>
         <CardDescription>Height: {props.description} cm</CardDescription>
         <CardButton onClick={() => gotoProfile(props.id)}>Discover</CardButton>
-        {/* <Link to={}></Link> */}
+        {/* <Link to={"/about"}>About</Link> */}
     </Card>
   )
 }

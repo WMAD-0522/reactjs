@@ -31,7 +31,6 @@ const PaginationButton = styled.button`
   background-color: ${props => props.currentPage ? "#000" : "#cecec"};
 `;
 
-
 const ListPage = () => {
   const [characters, setCharacters] = useState([]);
   const [countOfCharacters, setCountOfCharacters] = useState(0);
