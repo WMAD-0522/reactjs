@@ -8,6 +8,7 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 import Contact from "./pages/Contact/Contact";
 
 import './App.css'
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />}/>
             <Route path="/contact" element={<Contact />}/>
          </Routes>
+         <Footer />
       </BrowserRouter>
     </ThemeContext.Provider>
   )
