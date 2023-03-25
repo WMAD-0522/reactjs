@@ -27,9 +27,10 @@ const ProjectCardDesing = styled.div`
 `;
 
 const ProjectCardContent = styled.div`
-  max-width: 585px;
+  max-width: 560px;
+  margin-left: 20px;
   height: auto;
-  padding: 1rem 2rem;
+  // padding: 1rem 2rem;
   h5{
     font-style: normal;
     font-weight: 700;

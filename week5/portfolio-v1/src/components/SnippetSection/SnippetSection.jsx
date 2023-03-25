@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import SnippetCard from '../Card/SnippetCard/SnippetCard';
 import SeeMoreButton from '../Button/SeeMoreButton/SeeMoreButton';
 const Wrapper = styled.div`
-    padding: 1rem 2rem;
+    padding: 2rem 0;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -21,17 +21,18 @@ const Title =  styled.h1`
     font-size: 48px;
 `;
 
-const SnippetSection = () => {
+const SnippetSection = ({ repositories }) => {
   return (
     <Wrapper>
         <Title>Code Snippet</Title>
         <div className='list'>
-            <SnippetCard />
-            <SnippetCard />
-            <SnippetCard />
-            <SnippetCard />
+            {
+                repositories.slice(0, 4).map((repo, index) => {
+                    return <SnippetCard key={index} title={repo.name} rating={repo.stargazers_count} languages={repo.languages_url} />
+                })
+            }
         </div>
-        <SeeMoreButton />
+        <SeeMoreButton url={"/snippet"} />
     </Wrapper>
   )
 }

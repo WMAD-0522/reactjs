@@ -11,8 +11,18 @@ const NavContainer = styled.nav`
     color: ${props => props.theme === "light" ? "#333" : "#fff"};
     height: 128px;
     border-bottom: 1px solid ${props => props.theme === "light" ? "#E2E2E2" : "#4D4D4D"};
+    .inner{
+        width: 1140px;
+        display: flex;
+        align-items:center;
+        // padding: 1rem 2rem;
+        margin: 0 auto;
+    }
     h1{
         margin-right: auto;
+        a{
+            color: ${props => props.theme === "light" ? "#333" : "#fff"};
+        }
     }
     ul{
         list-style: none;
@@ -27,7 +37,7 @@ const NavContainer = styled.nav`
     }
     button{
         margin-left: 1rem;
-        padding: 0.35rem 0.5rem;
+        padding: 0.55rem 1.2rem;
         border:none;
         border-radius: 4px;
         background-color: ${props => props.theme === "light" ? "#333" : "#fff"};
@@ -40,7 +50,8 @@ const Nav = () => {
   
   return (
     <NavContainer theme={theme}>
-        <h1>Hiroki</h1>
+        <div className='inner'>
+        <h1><Link to={"/"}>Hiroki</Link></h1>
         <ul>
             <li>
                 <Link to={"/"}>Home</Link>
@@ -53,6 +64,7 @@ const Nav = () => {
             </li>
         </ul>
         <button onClick={toggleTheme}>{theme === "light" ? "Dark" : "Light"}</button>
+        </div>
     </NavContainer>
   )
 }

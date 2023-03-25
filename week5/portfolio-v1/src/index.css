@@ -13,6 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -27,6 +28,7 @@ a{
 }
 
 .container{
-  max-width: 1440px;
-  margin: 0 auto;
+  /* border: 1px solid black;
+  width: 1140px;
+  margin: 0 auto; */
 }

@@ -8,19 +8,25 @@ const HomeContainer = styled.div`
     padding: 1rem 2rem;
     background-color: ${props => props.theme === "light" ? "#fff" : "#333"};
     color: ${props => props.theme === "light" ? "#333" : "#fff"};
+    .inner{
+        width: 1140px;
+        margin: 0 auto;
+    }
 
     @media (max-width: 768px) {
         padding: 1rem;
     }
 `;
 
-const Home = () => {
+const Home = ({ repositories }) => {
     const { theme } = useContext(ThemeContext)
   return (
     <HomeContainer theme={theme}>
-      <Hero />
-      <ProjectSection />
-      <SnippetSection />
+      <div className='inner'>
+        <Hero />
+        <ProjectSection />
+        <SnippetSection repositories={repositories} />
+      </div>
     </HomeContainer>
   )
 }

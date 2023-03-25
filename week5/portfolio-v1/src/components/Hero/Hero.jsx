@@ -7,10 +7,10 @@ import Contact from "../Contact/Contact"
 import SkillCard from '../Card/SkillCard/SkillCard';
 import { HiGlobe, HiClipboardList } from "react-icons/hi"
 const Wrapper = styled.div`
-    padding: 1rem 2rem;
 `
 
 const HeroTitle = styled.h1`
+    margin-top: 3rem;
     font-style: normal;
     font-weight: 700;
     font-size: 56px;
@@ -47,7 +47,7 @@ const RowWrapper = styled.div`
 const GridWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(556px, 1fr));
-    gap: 2rem;
+    // gap: 2rem;
 
     @media (max-width: 768px) {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));

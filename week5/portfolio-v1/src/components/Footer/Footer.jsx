@@ -27,14 +27,18 @@ const FooterContainer = styled.footer`
     h5{
         margin-top: 3rem;
         margin-bottom: 1rem;
+        
     }
 `;
 
 const RowWrapper = styled.div`
     display: flex;
     gap: 24px;
+    a{
+        color: ${props => props.theme === "light" ? "#333" : "#fff" };
+    }
     svg{
-        font-size: 24px;
+        font-size: 30px;
         margin-bottom: 2.2rem;
     }
 `
@@ -61,10 +65,10 @@ const Footer = () => {
             </li>
         </ul>
         <h5>Reach me out</h5>
-        <RowWrapper>
-            <AiFillGithub />
-            <AiFillLinkedin />
-            <AiOutlineTwitter />
+        <RowWrapper theme={theme}>
+            <a href="https://github.com/Hiroki-Miyasaka" target='_blank'><AiFillGithub /></a>
+            <a href=""><AiFillLinkedin /></a>
+            <a href=""><AiOutlineTwitter /></a>
         </RowWrapper>
     </FooterContainer>
   )

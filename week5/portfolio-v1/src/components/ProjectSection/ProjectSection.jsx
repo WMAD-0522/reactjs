@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     height: auto;
     flex-direction: column;
     gap: 2rem;
-    padding: 1rem 2rem;
+    padding: 2rem 0;
 `;
 
 const Title = styled.h1`
@@ -33,7 +33,7 @@ const ProjectSection = () => {
           content={"Serrow restructured and designed core pages, creating interactive elements that put users in control and allowed them to discover the information needed to make a decision."}
           image={WebSiteImage}
         />
-        <SeeMoreButton />
+        <SeeMoreButton url={"/portfolio"} />
     </Wrapper>
   )
 }

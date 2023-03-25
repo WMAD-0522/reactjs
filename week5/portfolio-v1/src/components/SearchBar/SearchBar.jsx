@@ -18,6 +18,10 @@ const SearchBarWrapper = styled.div`
     outline: none;
     padding: 0 10px;
     background-color: ${props => props.theme === "light" ? "#333" : "#fff"};
+    color: ${props => props.theme === "light" ? "#fff" : "#333"};
+    &::placeholder {
+      color: ${props => props.theme === "light" ? "#fff" : "#333"};
+    }
   }
   svg {
     position: absolute;
@@ -30,11 +34,11 @@ const SearchBarWrapper = styled.div`
   }
 `;
 
-const SearchBar = ({ title, content }) => {
+const SearchBar = ({ handleSearch }) => {
     const { theme } = useContext(ThemeContext);
   return (
     <SearchBarWrapper theme={theme}>
-      <input placeholder="Type your favorite snippet here, hehehe ....." />
+      <input onChange={handleSearch} placeholder="Type your favorite snippet here, hehehe ....." />
       <BiSearch />
     </SearchBarWrapper>
   );

@@ -3,6 +3,7 @@ import styled from "styled-components";
 // import menuImage from "../../assets/menu.png";
 import { GiHamburgerMenu } from "react-icons/gi"
 import ThemeContext from "../../../context/ThemeContext";
+import { Link } from "react-router-dom";
 
 const SeeMoreButtonWrapper = styled.div`
   width: 165px;
@@ -32,13 +33,15 @@ const SeeMoreButtonWrapper = styled.div`
   }
 `;
 
-const SeeMoreButton = ({ title, content }) => {
+const SeeMoreButton = ({ url }) => {
     const { theme } = useContext(ThemeContext)
   return (
-    <SeeMoreButtonWrapper theme={theme}>
+    <Link to={url}>
+      <SeeMoreButtonWrapper theme={theme}>
       <GiHamburgerMenu />
       <p>See More</p>
     </SeeMoreButtonWrapper>
+    </Link>
   );
 };
 
