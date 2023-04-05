@@ -60,8 +60,8 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(fetchTodos());
-  }, [])
+    dispatch(fetchTodos());
+  }, [dispatch])
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -74,8 +74,8 @@ function App() {
     dispatch(deleteTodo(id));
   }
 
-  const handleToggle = (id) => {
-    dispatch(toggleTodo(id));
+  const handleToggle = (id, completed) => {
+    dispatch(toggleTodo(id, completed));
   }
 
   return (
@@ -91,8 +91,8 @@ function App() {
         <ul>
           {todos.map((todo, index) => 
           <li key={index}>
-            <span style={{ textDecoration: todo.completed ? "line-through" : "None"}}>{todo.title}</span>
-            <button onClick={() => handleToggle(todo.id)}>Complete</button>
+            <span style={{ textDecoration: todo.completed && "line-through"}}>{todo.title}</span>
+            <button onClick={() => handleToggle(todo.id, !todo.completed)}>Complete</button>
             <button onClick={() => handleDelete(todo.id)}>Delete</button>
           </li>
           )}
